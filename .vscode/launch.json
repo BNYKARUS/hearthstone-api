@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Carta",
+            "request": "launch",
+            "mainClass": "com.hearthstone.api.Carta",
+            "projectName": "api"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ApiApplication<api>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.hearthstone.api.ApiApplication",
+            "projectName": "api",
+            "args": ""
+        }
+    ]
+}
