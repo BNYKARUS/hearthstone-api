@@ -18,19 +18,18 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 public class CardDTO {
-	private @Id @GeneratedValue Long id;
+	private Long id;
 	private String name;
 	private String details;
 	@Max(10)
 	private Integer attack;
 	@Max(10)
 	private Integer defense;
-	private String type;
-	private String cardClass;
+	private CardType type;
+	private CardClass cardClass;
 	
 	public Card toModel() {
 		return Card.builder()
-				.id(id)
 				.name(name)
 				.details(details)
 				.attack(attack)

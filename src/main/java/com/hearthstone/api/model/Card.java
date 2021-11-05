@@ -2,7 +2,10 @@ package com.hearthstone.api.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Max;
@@ -20,10 +23,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name = "CARTA")
+@Table(name = "CARD")
 public class Card {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
-	private @Id @GeneratedValue Long id;
+	private Long id;
 	@Column(name = "NAME")
 	private String name;
 	@Column(name = "DETAILS")
@@ -34,8 +39,10 @@ public class Card {
 	@Max(10)
 	@Column(name = "DEFENSE")
 	private Integer defense;
+	@Enumerated(EnumType.STRING)
 	@Column(name = "TYPE")
-	private String type;
+	private CardType type;
+	@Enumerated(EnumType.STRING)
 	@Column(name = "CARD_CLASS")
-	private String cardClass;
+	private CardClass cardClass;
 }
